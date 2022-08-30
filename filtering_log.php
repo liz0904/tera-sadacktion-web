@@ -211,13 +211,13 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">전체로그 확인하기</h1>
-                    <p class="mb-4">전체 기기로부터 오는 로그들을 한번에 확인할 수 있습니다. </p>
+                    <h1 class="h3 mb-2 text-gray-800">로그 필터링</h1>
+                    <p class="mb-4">원하는 로그를 선택하여 필터링 할 수 있습니다. </p>
 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">전체 로그 목록</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">로그 필터링 결과</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
