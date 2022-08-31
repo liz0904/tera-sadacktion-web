@@ -80,7 +80,7 @@
                         <h6 class="collapse-header">Tera Sadacktion 설정 변경:</h6>
                         <a class="collapse-item" href="allow_device.php">허용 기기 등록/삭제</a>
 						<a class="collapse-item" href="deny_device.php">차단 IP 등록/삭제</a>
-                        <a class="collapse-item" href="ㅇregister.php">SIEM 허용 계정 등록/삭제</a>
+                        <a class="collapse-item" href="register.php">SIEM 허용 계정 등록/삭제</a>
                     </div>
                 </div>
             </li>
