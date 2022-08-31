@@ -78,9 +78,9 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Tera Sadacktion 설정 변경:</h6>
-                        <a class="collapse-item" href="allow_device.php">허용 기기 등록/삭제</a>
-						<a class="collapse-item" href="deny_device.php">차단 IP 등록/삭제</a>
-                        <a class="collapse-item" href="ㅇregister.php">SIEM 허용 계정 등록/삭제</a>
+                        <a class="collapse-item" href="buttons.html">허용 기기 등록/삭제</a>
+						<a class="collapse-item" href="buttons.html">차단 IP 등록/삭제</a>
+                        <a class="collapse-item" href="cards.html">SIEM 허용 계정 등록/삭제</a>
                     </div>
                 </div>
             </li>
@@ -103,14 +103,15 @@
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">위협 로그:</h6>
-                        <a class="collapse-item" href="deny_device_list.php">등록되지 않은 기기 접근</a>
-                        <a class="collapse-item" href="block_ip_list.php">차단 IP 접근</a>
+                        <a class="collapse-item" href="login.html">등록되지 않은 기기 접근</a>
+                        <a class="collapse-item" href="register.html">차단 IP 접근</a>
                     </div>
                 </div>
             </li>
 
         </ul>
         <!-- End of Sidebar -->
+
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
 
@@ -192,120 +193,45 @@
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
-				
-                <div class="container-fluid">
+ <div class="container">
 
-                    <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">전체로그 확인하기</h1>
-                    <p class="mb-4">전체 기기로부터 오는 로그들을 한번에 확인할 수 있습니다. </p>
-
-                    <!-- DataTales Example -->
-                    <div class="card shadow mb-4">
-                        <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">전체 로그 목록</h6>
-                        </div>
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0" style="table-layout:fixed;text-align:center;">
-                                    <thead>
-										
-									<?php
-									$connect = mysqli_connect('localhost', 'phpmyadmin', 'sung04156!', 'ts_db') or die("connect failed");
-									$query = "select * from board order by id desc";    //역순 출력(최신순 출력)
-									$result = mysqli_query($connect, $query);
-
-									$total = mysqli_num_rows($result);  //result set의 총 레코드(행) 수 반환
-									session_start();             
-									?>
-                                        <tr>
-                                            <th>id</th>
-											<th>device</th>
-											<th>date</th>
-											<th>time</th>
-											<th>action</th>
-											<th>protocol</th>
-											<th>src_ip</th>
-											<th>dst_ip</th>
-											<th>src_port</th>
-											<th>dst_port</th>
-											<th>size</th>
-											<th>tcpflags</th>
-											<th>tcpack</th>
-											<th>tcpwin</th>
-											<th>icmptype</th>
-											<th>icmpcode</th>
-											<th>info</th>
-											<th>path</th>
-                                        </tr>
-                                    </thead>
-                                    <tfoot>
-                                        <tr>
-                                            <th>id</th>
-											<th>device</th>
-											<th>date</th>
-											<th>time</th>
-											<th>action</th>
-											<th>protocol</th>
-											<th>src_ip</th>
-											<th>dst_ip</th>
-											<th>src_port</th>
-											<th>dst_port</th>
-											<th>size</th>
-											<th>tcpflags</th>
-											<th>tcpack</th>
-											<th>tcpwin</th>
-											<th>icmptype</th>
-											<th>icmpcode</th>
-											<th>info</th>
-											<th>path</th>
-                                        </tr>
-                                    </tfoot>
-                                    <tbody>
-										<?php
-										while ($rows = mysqli_fetch_assoc($result)) {   //result set에서 레코드(행)를 1개씩 리턴
-											if ($total % 2 == 0) {
-										?>
-                                      	<tr class="even">
-                        				<!--배경색 진하게-->
-										<?php
-											} else {
-										?>
-										<tr>
-                        				<!--배경색 그냥-->
-										<?php } ?>
-                                            <td><?php echo $rows['id'] ?></td>
-											<td><?php echo $rows['device'] ?></td>
-											<td><?php echo $rows['date'] ?></td>
-											<td><?php echo $rows['time'] ?></td>
-											<td><?php echo $rows['action'] ?></td>
-											<td><?php echo $rows['protocol'] ?></td>
-											<td><?php echo $rows['src_ip'] ?></td>
-											<td><?php echo $rows['dst_ip'] ?></td>
-											<td><?php echo $rows['src_port'] ?></td>
-											<td><?php echo $rows['dst_port'] ?></td>
-											<td><?php echo $rows['size'] ?></td>
-											<td><?php echo $rows['tcpflags'] ?></td>
-											<td><?php echo $rows['tcpack'] ?></td>
-											<td><?php echo $rows['tcpwin'] ?></td>
-											<td><?php echo $rows['icmptype'] ?></td>
-											<td><?php echo $rows['icmpcode'] ?></td>
-											<td><?php echo $rows['info'] ?></td>
-											<td><?php echo $rows['path'] ?></td>
-                                        </tr>
-                                        <?php
-											$total--;
-											}
-										?>
-                                    </tbody>
-                                </table>
+        <div class="card o-hidden border-0 shadow-lg my-5">
+            <div class="card-body p-0">
+                <!-- Nested Row within Card Body -->
+                <div class="row">
+                    <div class="col-lg-5 d-none d-lg-block bg-register-image"></div>
+                    <div class="col-lg-7">
+                        <div class="p-5">
+                            <div class="text-center">
+                                <h1 class="h4 text-gray-900 mb-4">허용 디바이스 추가/삭제</h1>
                             </div>
+                            <form class="user">
+                                <div class="form-group row">
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <input type="text" class="form-control form-control-user" id="user_real_name"
+                                            placeholder="사용자 이름">
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="text" class="form-control form-control-user" id="department"
+                                            placeholder="부서">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control form-control-user" id="username"
+                                        placeholder="username">
+                                </div>
+                                <div class="form-group">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control form-control-user"
+                                            id="password" placeholder="Password">
+                                    </div>
+                                </div>
+                                <a href="login.php" class="btn btn-primary btn-user btn-block">
+                                    관리자 추가하기
+                                </a>
+                                <hr>
+
                         </div>
-                    </div>
-
-                </div>
-                <!-- /.container-fluid -->
-
-            </div>
             <!-- End of Main Content -->
 
             <!-- Footer -->

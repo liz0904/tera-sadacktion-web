@@ -78,9 +78,9 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Tera Sadacktion 설정 변경:</h6>
-                        <a class="collapse-item" href="buttons.html">허용 기기 등록/삭제</a>
-						<a class="collapse-item" href="buttons.html">차단 IP 등록/삭제</a>
-                        <a class="collapse-item" href="register.php">SIEM 허용 계정 등록/삭제</a>
+                        <a class="collapse-item" href="allow_device.php">허용 기기 등록/삭제</a>
+						<a class="collapse-item" href="deny_device.php">차단 IP 등록/삭제</a>
+                        <a class="collapse-item" href="ㅇregister.php">SIEM 허용 계정 등록/삭제</a>
                     </div>
                 </div>
             </li>
@@ -103,8 +103,8 @@
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">위협 로그:</h6>
-                        <a class="collapse-item" href="login.html">등록되지 않은 기기 접근</a>
-                        <a class="collapse-item" href="register.html">차단 IP 접근</a>
+                        <a class="collapse-item" href="deny_device_list.php">등록되지 않은 기기 접근</a>
+                        <a class="collapse-item" href="block_ip_list.php">차단 IP 접근</a>
                     </div>
                 </div>
             </li>
